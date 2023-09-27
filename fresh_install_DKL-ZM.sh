@@ -51,9 +51,8 @@ browseable = yes
 read only = no
 valid users = @users' >> /etc/samba/smb.conf"
 #sudo nano /etc/samba/smb.conf
-# create smb password
-sudo smbpasswd -a pt 
-# add the following lines
+# create smb password for user pt
+sudo printf "ptDKLZM23\nptDKLZM23" | sudo smbpasswd -a pt 
 
 
 # REMOTE ACCESS============================================================================
