@@ -31,7 +31,12 @@ sudo sh -c "echo 'set ssl:verify-certificate false' >> /etc/lftp.conf"
 # install watchdog for CPU hang monitoring
 sudo apt install watchdog -y 
 # configure watchdog
-sudo nano /etc/watchdog.conf
+#sudo nano /etc/watchdog.conf
+sudo sh -c "echo '
+watchdog-device = /dev/watchdog
+log-dir = /var/log/watchdog
+max-load-1 = 24
+min-memory = 1"
 
 
 # install samba for network file access
