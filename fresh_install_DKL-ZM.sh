@@ -73,6 +73,13 @@ sudo systemctl disable teamviewerd.service && sudo systemctl stop teamviewerd.se
 
 # HARDWARE================================================================================
 
+# Enable CSI connection for camera
+wget https://www.waveshare.com/w/upload/7/75/CM4_dt_blob_Source.zip
+unzip -o  CM4_dt_blob_Source.zip -d ./CM4_dt_blob_Source; rm CM4_dt_blob_Source.zip
+sudo chmod 777 -R CM4_dt_blob_Source
+cd CM4_dt_blob_Source/
+sudo  dtc -I dts -O dtb -o /boot/dt-blob.bin dt-blob-disp1-double_cam.dts
+cd ..; rm -r CM4_dt_blob_Source
 
 # install PiJuice
 sudo apt install pijuice-gui -y
