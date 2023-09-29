@@ -20,8 +20,8 @@ echo "$(date +"%F %T"): Initiating Video Capture"
 echo "Video of $VID_LENGTH seconds will be captured and stored as $VID_NAME$VID_FORMAT"
 
 #record video and save in ~/Video dir
-libcamera-vid --codec libav --level 4.2 --framerate $VID_FPS --bitrate $VID_BPS --width 1920 --height 1080 -t $VID_LENGTH --nopreview -o $VID_PATH$VID_NAME$VID_FORMAT
-
+timeout -k 2 10s libcamera-vid --codec libav --level 4.2 --framerate $VID_FPS --bitrate $VID_BPS --width 1920 --height 1080 -t $VID_LENGTH --nopreview -o $VID_PATH$VID_NAME$VID_FORMAT
+echo 
 # Waits 2 seconds.
 sleep 2s
 
@@ -29,13 +29,11 @@ sleep 2s
 
 
 # Verify files by using "stat" command
-printf "\n \n New video file created:\n"
+echo "$(date +"%F %T"): New video file created:"
 file /home/pt/Videos/$VID_NAME$VID_FORMAT
-printf "\n file properties:\n"
-stat /home/pt/Videos/$VID_NAME$VID_FORMAT
+#printf "\n file properties:\n"
+#stat /home/pt/Videos/$VID_NAME$VID_FORMAT
 echo
-# Copy Video to USB Drive
-
 
 # cmd finish message
 echo "$(date +"%F %T"): Video capture completed________________________"
