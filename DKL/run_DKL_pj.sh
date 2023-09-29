@@ -1,6 +1,7 @@
 #!/bin/bash
 
-
+echo "---------------------------------------------------------------------"
+echo "$(date +"%F %T"): Starting run_DKL script"
 # set wake up time
 /home/pt/DKL/set_next_startup.sh 
 
@@ -30,7 +31,7 @@ timeout -k 2 90s /home/pt/DKL/FTP_log_upload.sh
 
 # turn off
 echo
-echo "Calling software shutdown in 15 seconds"
+echo "$(date +"%F %T"): Calling software shutdown in 15 seconds"
 sleep 15; 
 echo "--------------------------------------------------------------------"
 sudo shutdown -h now

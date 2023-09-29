@@ -15,9 +15,8 @@ VID_FPS=30							# video frame rate in frames per second
 
 
 # cmd output message
-echo "---------------------------------------------------------------------"
-date +"%Y %m %d %H:%M:%S"
-echo "Initiating Video Capture"
+echo
+echo "$(date +"%F %T"): Initiating Video Capture"
 echo "Video of $VID_LENGTH seconds will be captured and stored as $VID_NAME$VID_FORMAT"
 
 #record video and save in ~/Video dir
@@ -39,8 +38,7 @@ echo
 
 
 # cmd finish message
-date +"%Y %m %d %H:%M:%S"
-echo "Video capture completed"
+echo "$(date +"%F %T"): Video capture completed________________________"
 echo
 
 # record 1080p@60

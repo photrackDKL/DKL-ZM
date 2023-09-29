@@ -26,5 +26,5 @@ echo
 # Finish statement
 echo "$(date +"%F %T"): FTP upload completed________________________"
 # Notification
-#curl -H "Title: DKL RPI00" -H "Tags: clapper,arrow_double_up" -d "Video file uploaded" ntfy.sh/$DKL_NAME
+#curl -H "Title: $DKL_NAME" -H "Tags: clapper,arrow_double_up" -d "Video file uploaded" ntfy.sh/$DKL_NAME
 echo

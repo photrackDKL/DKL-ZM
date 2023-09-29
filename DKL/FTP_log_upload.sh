@@ -22,10 +22,11 @@ echo
 echo "$(date +"%F %T"): Iniating FTP connection to upload LOG file"
 lftp -c "open -u $CONN_USR,$CONN_PWD $FTP_URL; put -O $REM_DIR $LOG_FILE_PATH -o $DKL_NAME"_"$CONN_DATE.log"
 
-# Terminate connection
-echo "$(date +"%F %T"): FTP LOG upload completed________________________"
 # Notification
 curl -H "Title: $DKL_NAME" -H "Tags: clipboard,arrow_double_up" -d "Files uploaded!
 🔋⚡️
-$(python /home/pt/DKL/get_batt_V.py)" ntfy.sh/$DKL_NAME
+$(python /home/pt/DKL/PJ/get_batt_V.py)" ntfy.sh/$DKL_NAME
+
+# Finish statement
+echo "$(date +"%F %T"): FTP LOG upload completed________________________"
 echo
