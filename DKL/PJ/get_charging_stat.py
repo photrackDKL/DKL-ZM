@@ -21,7 +21,7 @@ except:
 
 # Read PiJuice status.
 PJ_status=pj.status.GetStatus()
-print('PiJuice charging status: 	' + str(PJ_status['data'].get('powerInput')))
+print('PiJuice charging status: 	' + str(PJ_status['data'].get('powerInput')) +', '+ str(PJ_status['data'].get('battery')))
 	
 
 
