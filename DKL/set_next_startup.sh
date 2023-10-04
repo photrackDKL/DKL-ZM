@@ -28,6 +28,7 @@ if test $hour -ge $NIGHT_START		# Night time check
 	# Add night period to the current timestamp
 	echo "$(date +"%F %T"): NIGHT TIME DETECTED"
 	echo "DKL going to bed. Setting new startup time for next morning"
+	sleep 20
 	curl -H "Title: $(hostname)" -H "Tags: control_knobs"  -d "$(hostname) is going to bed. Setting new startup time for next morning $(date +"%a %d %b %H:00:00 %Z %Y" -d +"$NIGHT_PERIOD"hours)" ntfy.sh/$(hostname)
 	python /home/pt/DKL/PJ/set_startup_morning.py $NIGHT_PERIOD
 	# backup log file if it exceeds size limit
