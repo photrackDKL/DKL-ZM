@@ -1,4 +1,5 @@
 echo "Dowloading new files from Git"
+cd /home/pt/
 git clone https://github.com/photrackDKL/DKL-ZM.git
 
 echo "Installing new files on DKL"
